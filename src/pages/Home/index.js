@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import api from "../../services/api";
 
-import { Container, Header, Footer, Html } from "./styles";
+import { Container, Header, Html } from "./style";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -34,7 +34,6 @@ const Home = () => {
         <p>TOTAL DE PRODUTOS CADASTRADOS: {products.length}</p>
         <footer> TCC Francisco Maik</footer>
       </Container>
-      {/* <Footer>TCC - Francisco Maik</Footer> */}
     </Html>
   );
 };
