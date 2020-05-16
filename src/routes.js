@@ -9,9 +9,12 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/admin" component={Login} />
-        <Route path="/cadastro" component={Cadastro} />
+        <Route path={`${process.env.PUBLIC_URL}/`} exact component={Home} />
+        <Route path={`${process.env.PUBLIC_URL}/admin`} component={Login} />
+        <Route
+          path={`${process.env.PUBLIC_URL}/cadastro`}
+          component={Cadastro}
+        />
       </Switch>
     </BrowserRouter>
   );
