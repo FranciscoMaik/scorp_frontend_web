@@ -2,7 +2,7 @@
   "name": "scorp_page",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://infallible-benz-456607.netlify.app/",
+  "homepage": "https://infallible-benz-456607.netlify.app/sub",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
