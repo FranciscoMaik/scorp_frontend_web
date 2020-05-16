@@ -48,7 +48,7 @@ const Cadastro = () => {
       <Container>
         <ContainerForm>
           <Form onSubmit={handleCadastro}>
-            <Label for="Administrador">Cadastro de Produto</Label>
+            <Label>Cadastro de Produto</Label>
             <Input
               type="text"
               placeholder="Barcode"

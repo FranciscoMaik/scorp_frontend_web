@@ -5,25 +5,26 @@ import { useHistory } from "react-router-dom";
 import api from "../../services/api";
 
 const Login = () => {
-  console.log("test");
   const [user, setUser] = useState("");
-  const [pass, setPass] = useState("");
+  const [password, setPass] = useState("");
   const history = useHistory();
 
   async function handleLogin(e) {
     e.preventDefault();
     const data = {
       user,
-      password: pass,
+      password,
     };
+    console.log(typeof user, password);
 
     try {
-      const reponse = await api.get("admin", data);
+      const reponse = await api.post("admin", data);
+      console.log(reponse);
       localStorage.setItem("AdminId", reponse.data.id);
 
       history.push("/cadastro");
     } catch (error) {
-      alert("Não foi possivel logar");
+      alert(error.message);
     }
   }
 
@@ -31,7 +32,7 @@ const Login = () => {
     <Container>
       <ContainerForm>
         <Form onSubmit={handleLogin}>
-          <Label for="Administrador">Administrador</Label>
+          <Label>Administrador</Label>
           <Input
             type="text"
             placeholder="User"
@@ -42,7 +43,7 @@ const Login = () => {
             type="password"
             placeholder="Password"
             name="password"
-            value={pass}
+            value={password}
             onChange={(e) => setPass(e.target.value)}
           />
           <Button className="button" type="submit">
