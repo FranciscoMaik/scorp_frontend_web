@@ -11,10 +11,10 @@ const Home = () => {
     async function handleProducts() {
       const response = await api.get("/product");
 
-      const descriptions = response.data.map((product) => product.description);
+      const descriptions = response.data.map((product) => product);
 
-      const sorted = descriptions.sort();
-      setProducts(sorted);
+      // const sorted = descriptions.sort();
+      setProducts(descriptions);
     }
 
     handleProducts();
@@ -27,7 +27,9 @@ const Home = () => {
       <Container>
         <ul>
           {products.map((product) => (
-            <li key={product}>{product}</li>
+            <li key={product}>
+              {product.description} => {product.gtin}
+            </li>
           ))}
         </ul>
 
